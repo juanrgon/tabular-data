@@ -21,7 +21,7 @@ to this 😎
 ```python
 from tabular_data import csv_file
 
-for row in csv_file('names.csv').read_records():
+for row in csv_file('names.csv').read():
     print(row)
 ```
 
@@ -47,7 +47,7 @@ to this 🤩
 ```python
 from tabular_data import csv_file
 
-csv_file('names.csv').write_records(
+csv_file('names.csv').write(
     [
         {'first_name': 'Baked', 'last_name': 'Beans'},
         {'first_name': 'Lovely', 'last_name': 'Spam'},

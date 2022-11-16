@@ -16,7 +16,7 @@ class CSVFile(TabularDataFile):
     separator: str
     header_written: bool
 
-    def read_records(self) -> list[dict[str, str]]:
+    def read(self) -> list[dict[str, str]]:
         with open(self.path) as f:
             return list(csv.DictReader(f, delimiter=self.separator))
 
@@ -26,7 +26,7 @@ class CSVFile(TabularDataFile):
             start = 1 if skip_header else 0
             return list(reader)[start:]
 
-    def write_records(self, rows: list[dict[str, str]], write_header=True):
+    def write(self, rows: list[dict[str, str]], write_header=True):
         with open(self.path, "w") as f:
             if not rows:
                 return
@@ -53,7 +53,7 @@ class SmartCSVWriter:
     header_written: bool = False
     writer: csv.DictWriter | None = None
 
-    def write_records(self, rows: list[dict[str, str]]):
+    def write(self, rows: list[dict[str, str]]):
         if not rows:
             return
 

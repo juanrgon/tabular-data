@@ -5,7 +5,7 @@ import textwrap
 
 
 def test_csv_file_read_records():
-    assert tabular_data.csv_file(fixtures.files.PEOPLE_CSV).read_records() == [
+    assert tabular_data.csv_file(fixtures.files.PEOPLE_CSV).read() == [
         {
             "First Name": "Juan",
             "Last Name": "Gonzalez",
@@ -45,7 +45,7 @@ def test_csv_write_records():
     if target_file.exists():
         target_file.unlink()
 
-    tabular_data.csv_file(target_file).write_records(
+    tabular_data.csv_file(target_file).write(
         [
             {
                 "First Name": "Juan",
@@ -81,7 +81,7 @@ def test_csv_write_records_multiple_calls():
         target_file.unlink()
 
     with tabular_data.csv_file(target_file).open() as csv:
-        csv.write_records(
+        csv.write(
             [
                 {
                     "First Name": "Juan",
@@ -93,7 +93,7 @@ def test_csv_write_records_multiple_calls():
             ]
         )
 
-        csv.write_records(
+        csv.write(
             [
                 {
                     "First Name": "Solomon",
@@ -105,7 +105,7 @@ def test_csv_write_records_multiple_calls():
             ]
         )
 
-        csv.write_records([])
+        csv.write([])
 
     assert target_file.read_text() == textwrap.dedent(
         """\
