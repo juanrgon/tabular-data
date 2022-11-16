@@ -4,7 +4,7 @@ The sensible way to work with tabular data
 
 ## Read CSV files with ease
 
-Go from this 😡:
+Go from this 😡
 
 ```python
 import csv
@@ -16,7 +16,7 @@ with open('names.csv', newline='') as csvfile:
         print(row)
 ```
 
-to this 😎:
+to this 😎
 
 ```python
 from tabular_data import csv_file
@@ -27,7 +27,7 @@ for row in csv_file('names.csv').read_records():
 
 ## Write CSV files with no effort
 
-Go from this 🤮:
+Go from this 🤮
 
 ```python
 import csv
@@ -42,7 +42,7 @@ with open('names.csv', 'w', newline='') as csvfile:
     writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 ```
 
-to this 🤩:
+to this 🤩
 
 ```python
 from tabular_data import csv_file

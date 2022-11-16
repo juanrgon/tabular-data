@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tabular-data"
-version = "0.1.0"
+version = "0.1.2"
 description = "The sensible way to work with tabular data"
 authors = ["Juan Gonzalez <jrg2156@gmail.com>"]
 license = "MIT"
