@@ -27,11 +27,11 @@ class CSVFile(TabularDataFile):
             return list(reader)[start:]
 
     def write_records(self, rows: list[dict[str, str]], write_header=True):
-        if not rows:
-            return
-
-        headers = self.headers if self.headers else rows[0].keys()
         with open(self.path, "w") as f:
+            if not rows:
+                return
+
+            headers = self.headers if self.headers else rows[0].keys()
             writer = csv.DictWriter(f, fieldnames=headers, delimiter=self.separator)
 
             if write_header:

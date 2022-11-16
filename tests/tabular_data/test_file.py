@@ -105,6 +105,8 @@ def test_csv_write_records_multiple_calls():
             ]
         )
 
+        csv.write_records([])
+
     assert target_file.read_text() == textwrap.dedent(
         """\
         First Name,Last Name,DOB,State,Country
