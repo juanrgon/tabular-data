@@ -12,8 +12,9 @@ import csv
 with open('names.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
 
+    rows = []
     for row in reader:
-        print(row)
+        rows.append(row)
 ```
 
 to this 😎
@@ -21,8 +22,7 @@ to this 😎
 ```python
 from tabular_data import csv_file
 
-for row in csv_file('names.csv').read():
-    print(row)
+rows = csv_file('names.csv').read()
 ```
 
 ## Write CSV files with no effort
