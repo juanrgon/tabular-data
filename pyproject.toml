@@ -9,7 +9,7 @@ packages = [{include = "tabular_data"}]
 repository = "https://github.com/juanrgon/tabular-data"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 attrs = "^22.1.0"
 
 [tool.poetry.group.dev.dependencies]
