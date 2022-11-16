@@ -6,6 +6,7 @@ authors = ["Juan Gonzalez <jrg2156@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "tabular_data"}]
+repository = "https://github.com/juanrgon/tabular-data"
 
 [tool.poetry.dependencies]
 python = "^3.9"
